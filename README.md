@@ -16,7 +16,7 @@ I'm trying to find real world app ideas rather than just another `Foo` or `Bar` 
 
 Each project is created to learn few subjects above. You can find more detail about projects at their readme files.
 
-* [RAccounting](https://github.com/ILearnThings/IamLearningRuby/projects/raccounting)
+* [RAccounting](projects/raccounting)
 
 # Contribution
 
