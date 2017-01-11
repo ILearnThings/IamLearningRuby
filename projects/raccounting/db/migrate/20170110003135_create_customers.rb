@@ -9,7 +9,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.string :fax_number
       t.string :iban
       t.string :address
-      t.boolean :customer_type
+      t.integer :customer_type
       t.string :nid #tcnumber or tax id
       t.string :tax_office
 

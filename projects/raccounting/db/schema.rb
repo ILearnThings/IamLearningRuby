@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170111204729) do
     t.string   "fax_number"
     t.string   "iban"
     t.string   "address"
-    t.boolean  "customer_type"
+    t.integer  "customer_type"
     t.string   "nid"
     t.string   "tax_office"
     t.datetime "created_at",    null: false
