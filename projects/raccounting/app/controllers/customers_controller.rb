@@ -26,7 +26,6 @@ class CustomersController < ApplicationController
       params
         .require(:customer)
           .permit(
-            :short_name,
             :company_title,
             :short_name,
             :email,
