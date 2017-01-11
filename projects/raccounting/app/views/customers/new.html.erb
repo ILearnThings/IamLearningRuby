@@ -20,6 +20,49 @@
     <%= f.label :short_name %><br>
     <%= f.text_field :short_name %><br>
 </div>
+<div>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br>
+</div>
+
+<div>
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %><br>
+</div>
+
+<div>
+    <%= f.label :fax_number %><br>
+    <%= f.text_field :fax_number %><br>
+</div>
+
+<div>
+    <%= f.label :iban %><br>
+    <%= f.text_field :iban %><br>
+</div>
+
+<div>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %><br>
+</div>
+
+<div>
+    <%= f.label :customer_type %><br>
+    <%= f.label :customer_type_legal_entity, "Legal Entity" %><br>
+    <%= f.radio_button :customer_type, "legal_entity" %><br>
+    
+    <%= f.label :customer_type_real_person, "Real Person" %><br>
+    <%= f.radio_button :customer_type, "real_person" %><br>
+</div>
+
+<div>
+    <%= f.label :nid %><br>
+    <%= f.text_field :nid %><br>
+</div>
+
+<div>
+    <%= f.label :tax_office %><br>
+    <%= f.text_field :tax_office %><br>
+</div>
 
 <div>
 <%= f.submit %>
