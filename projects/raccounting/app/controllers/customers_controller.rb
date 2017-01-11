@@ -23,7 +23,20 @@ class CustomersController < ApplicationController
 
   private
     def customer_param
-      params.require(:customer).permit(:short_name, :string) #.permit(:company_title, :string)
+      params
+        .require(:customer)
+          .permit(
+            :short_name,
+            :company_title,
+            :short_name,
+            :email,
+            :phone_number, 
+            :fax_number, 
+            :iban, 
+            :address, 
+            :customer_type, 
+            :nid, #tcnumber or tax id 
+            :tax_office)
     end
 end
 
