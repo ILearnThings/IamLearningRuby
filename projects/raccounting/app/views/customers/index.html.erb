@@ -1,0 +1,15 @@
+<h1>Customer#index</h1>
+<div> <%= link_to 'New Customer', new_customer_path %> </div>
+<table>
+
+<tr>
+<th>Short Name</th>
+</tr>
+
+<% @customers.each do |customer| %>
+    <tr>
+<td><%= customer.short_name %></td>
+<td><%= link_to 'Show', customer_path(customer) %></td>
+</tr>
+<% end %>
+</table>

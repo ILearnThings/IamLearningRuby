@@ -1,0 +1,25 @@
+<%= form_for :customer, url: customers_path do |f| %>
+
+<%if @customer.errors.any? %>
+    <div>
+        <%= pluralize(@customer.errors.count, "error") %> detected:
+        <ul>
+            <% @customer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <%end%>
+        </ul>
+    </div>
+<% end %>
+
+<div>
+</div>
+
+<div>
+    <%= f.label :short_name %><br>
+    <%= f.text_field :short_name %><br>
+</div>
+
+<div>
+<%= f.submit %>
+</div>
+<% end %>
