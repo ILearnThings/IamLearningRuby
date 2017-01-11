@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170111204729) do
   end
 
   create_table "customers", force: :cascade do |t|
+    t.string   "company_title"
     t.string   "short_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

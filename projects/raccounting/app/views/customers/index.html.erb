@@ -3,11 +3,13 @@
 <table>
 
 <tr>
+<th>Company Title</th>
 <th>Short Name</th>
 </tr>
 
 <% @customers.each do |customer| %>
     <tr>
+<td><%= customer.company_title %></td>
 <td><%= customer.short_name %></td>
 <td><%= link_to 'Show', customer_path(customer) %></td>
 </tr>
