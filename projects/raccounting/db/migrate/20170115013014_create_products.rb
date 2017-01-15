@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
     create_table :products do |t|
       t.string :name
       t.string :code
+      t.boolean :do_stock_tracking
       t.integer :amount
       t.string :purchase_sales_unit
       t.decimal :purchase_price
