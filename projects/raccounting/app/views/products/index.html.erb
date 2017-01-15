@@ -1,0 +1,23 @@
+<h1>Products</h1>
+<div> <%= link_to 'New Product / Service', new_product_path %> </div>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Stock Count</th>
+        <th>Buying Price (tax excl.)</th>
+        <th>List Price (tax excl.)</th>
+    </tr>
+
+<% @products.each do |product| %>
+    <tr>
+        <td><%= product.name %></td>
+        <td><%= product.amount %></td>
+        <td><%= product.purchase_price %></td>
+        <td><%= product.sales_price %></td>
+        <td><%= link_to 'Show', productpath(product) %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    </tr>
+<% end %>
+
+</table>
