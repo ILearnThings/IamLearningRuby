@@ -1,0 +1,25 @@
+<h1> Log in </h1>
+<%= session[:current_user_id] %>
+<%= session[:current_company_id]%>
+
+<% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<%= form_for :session, url: login_path do |f| %>
+    <span class="font: bold">Email demo@demo.com and password demo </span>
+    <div>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+    </div>
+
+    <div>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+    </div>
+
+    <div> 
+        <%= f.submit 'Login' %>
+    </div>
+    <div>
+<% end %>
