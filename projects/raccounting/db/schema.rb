@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115011929) do
+ActiveRecord::Schema.define(version: 20170115013014) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,21 @@ ActiveRecord::Schema.define(version: 20170115011929) do
     t.string   "tax_office"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.boolean  "do_stock_tracking"
+    t.integer  "amount"
+    t.string   "purchase_sales_unit"
+    t.decimal  "purchase_price"
+    t.decimal  "sales_price"
+    t.integer  "vat"
+    t.integer  "company_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["company_id"], name: "index_products_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|

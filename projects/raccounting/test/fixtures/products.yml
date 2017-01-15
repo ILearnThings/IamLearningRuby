@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  do_stock_tracking: 
+  amount: 1
+  purchase_sales_unit: MyString
+  purchase_price: 9.99
+  sales_price: 9.99
+  vat: 1
+  company: one
+
+two:
+  name: MyString
+  code: MyString
+  do_stock_tracking: 
+  amount: 1
+  purchase_sales_unit: MyString
+  purchase_price: 9.99
+  sales_price: 9.99
+  vat: 1
+  company: two
