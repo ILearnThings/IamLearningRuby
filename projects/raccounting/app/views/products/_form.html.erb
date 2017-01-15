@@ -17,6 +17,32 @@
     <%= f.label :do_stock_tracking_0, "No" %><br>
     <%= f.radio_button :do_stock_tracking, "0" %><br>
 </div>
+
+<div>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+</div>
+
+<div>
+    <%= f.label :purchase_sales_unit %>
+    <%= f.text_field :purchase_sales_unit %>
+</div>
+
+<div>
+    <%= f.label :purchase_price %>
+    <%= f.text_field :purchase_price %>
+</div>
+
+<div>
+    <%= f.label :sales_price %>
+    <%= f.text_field :sales_price %>
+</div>
+
+<div>
+    <%= f.label :vat %>
+    <%= f.text_field :vat %>
+</div>
+
 <div> 
     <%= f.submit %>
 </div>

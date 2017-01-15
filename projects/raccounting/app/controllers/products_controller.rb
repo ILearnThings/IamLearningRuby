@@ -17,11 +17,12 @@ class ProductsController < ApplicationController
 
     def create
         @product = Product.new(product_param)
+        @product.company_id = 1
 
         if @product.save()
-        redirect_to @product
+            redirect_to @product
         else
-        render 'new'
+            render 'new'
         end
     end
 
