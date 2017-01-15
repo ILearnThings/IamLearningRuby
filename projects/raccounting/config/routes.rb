@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :customers
+  resources :products
 
   get 'customers/index'
 
