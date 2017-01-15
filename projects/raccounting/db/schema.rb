@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170115013014) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.integer  "userid"
     t.string   "company_title"
     t.string   "short_name"
     t.string   "email"
