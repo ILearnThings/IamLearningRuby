@@ -1,6 +1,4 @@
 <h1> Log in </h1>
-<%= session[:current_user_id] %>
-<%= session[:current_company_id]%>
 
 <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
