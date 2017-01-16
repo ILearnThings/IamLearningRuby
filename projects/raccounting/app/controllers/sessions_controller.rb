@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user 
       session[:current_user_id] = user.id
       session[:current_company_id] = user.company_id
-      redirect_to company_url(user.company)
+      redirect_to root_path
     else
       flash.now[:error] = "Invalid email or password!"
       render 'new'
