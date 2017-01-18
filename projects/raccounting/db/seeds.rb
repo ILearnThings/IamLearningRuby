@@ -7,11 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 demo_company = Company.create_with(:address => 'Demo Company Address').find_or_create_by(:name => 'DemoCompany')
-demo_user = User.create_with(
-                    :name => 'Demo', 
-                    :surname => 'User',
-                    :password => 'demo',
-                    ).find_or_create_by(
+if User.exists?(company: demo_company.id, email: 'demo@demo.com') == false
+    demo_user = User.create(
+                        :name => 'Demo', 
+                        :surname => 'User',
+                        :password => 'demopass',
+                        :password_confirmation => 'demopass',
                         :email => 'demo@demo.com',
                         :company => demo_company
-                    )
+                        )
+end

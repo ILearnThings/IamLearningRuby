@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :companies
   resources :customers
   resources :products
 
-  root 'home#index'
-  get 'customers/index'
+  root 'companies#index'
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
