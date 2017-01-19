@@ -8,7 +8,7 @@ class CreateStockMovements < ActiveRecord::Migration[5.0]
       t.datetime :date_of_issuance
       t.string :waybill_number
       t.datetime :actual_date_of_shipment
-      t.int :supplier_id
+      t.integer :supplier_id
       t.boolean :is_entry
 
       t.timestamps
