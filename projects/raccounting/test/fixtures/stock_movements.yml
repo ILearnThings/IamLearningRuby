@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  address: MyString
+  town: MyString
+  city: MyString
+  date_of_issuance: 2017-01-19 23:41:46
+  waybill_number: MyString
+  actual_date_of_shipment: 2017-01-19 23:41:46
+  supplier_id: 
+  is_entry: false
+
+two:
+  description: MyString
+  address: MyString
+  town: MyString
+  city: MyString
+  date_of_issuance: 2017-01-19 23:41:46
+  waybill_number: MyString
+  actual_date_of_shipment: 2017-01-19 23:41:46
+  supplier_id: 
+  is_entry: false
