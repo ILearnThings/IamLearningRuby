@@ -1,4 +1,4 @@
-<%= form_for @product do |f| %>
+<%= form_for ([@company, @product]) do |f| %>
 
 <div>
     <%= f.label :name %>
@@ -11,11 +11,11 @@
 </div>
 <div>
     <%= f.label :do_stock_tracking %><br>
-    <%= f.label :do_stock_tracking_1, "Yes" %><br>
-    <%= f.radio_button :do_stock_tracking, "1" %><br>
+    <%= f.label :do_stock_tracking_true, "Yes" %><br>
+    <%= f.radio_button :do_stock_tracking, "true" %><br>
 
-    <%= f.label :do_stock_tracking_0, "No" %><br>
-    <%= f.radio_button :do_stock_tracking, "0" %><br>
+    <%= f.label :do_stock_tracking_false, "No" %><br>
+    <%= f.radio_button :do_stock_tracking, "false" %><br>
 </div>
 
 <div>
@@ -47,3 +47,5 @@
     <%= f.submit %>
 </div>
 <% end %>
+
+
