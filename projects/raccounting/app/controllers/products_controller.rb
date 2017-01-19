@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     def index
-        @products = Product.all
+        @products = Product.where(company_id: params[:company_id])
     end
 
     def show
@@ -17,10 +17,10 @@ class ProductsController < ApplicationController
 
     def create
         @product = Product.new(product_param)
-        @product.company_id = 1
-
+        @product.company = @company
+        
         if @product.save()
-            redirect_to @product
+            redirect_to company_product_path(@company, @product)
         else
             render 'new'
         end
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
         @product = Product.find(params[:id])
 
         if @product.update(product_param)
-            redirect_to @product
+            redirect_to company_product_path(@company, @product)
         else
             render 'edit'
         end
