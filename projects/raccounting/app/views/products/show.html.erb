@@ -1,0 +1,11 @@
+<div>
+    <h1><%= @product.name%></h1>
+    <p>
+        <span>ALIŞ <%= @product.purchase_price %></span>
+        <span>SATIŞ <%= @product.sales_price %></span>
+        <span>KDV <%= @product.vat %></span>
+        <span>STOK <%= @product.amount %></span>
+    </p>
+
+    <%= link_to 'Düzenle', edit_company_product_path(@company, @product) %>
+</div>
