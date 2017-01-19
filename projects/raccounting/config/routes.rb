@@ -1,11 +1,28 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :companies
-  resources :customers
-  resources :products
+  # resources :companies
+  # resources :customers
+  # resources :products
 
-  root 'companies#index'
+  # get 'customers/index'
+  root 'companies#show'
+  # get ':company_id', to: 'companies#index'
+  # scope path: 'company_id', as: :current_user.id do
+  #   resources :category
+  #   resources :companies
+  #   resources :customers
+  #   resources :products
+  #   resources :users
+  # end
+  # resources :companies, only: [:index]
+
+  resources :companies, :path => '', :only => [:show] do
+    resources :categories
+    resources :customers
+    resources :products
+    resources :users
+  end
 
 
   get '/login', to: 'sessions#new'
