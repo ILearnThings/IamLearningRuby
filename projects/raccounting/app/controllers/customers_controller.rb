@@ -19,7 +19,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_param)
 
     if @customer.save()
-      redirect_to @customer
+      redirect_to company_customer_path(@company, @customer)
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
 
       if @customer.update(customer_param)
-        redirect_to @customer
+        redirect_to company_customer_path(@company, @customer)
       else
         render 'edit'
       end
