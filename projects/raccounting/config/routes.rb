@@ -22,9 +22,8 @@ Rails.application.routes.draw do
     resources :customers
     resources :products
     resources :users
-    resources :stockmovements
+    resources "stock-movements", :controller => :stock_movements, :as => :stock_movements
   end
-
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

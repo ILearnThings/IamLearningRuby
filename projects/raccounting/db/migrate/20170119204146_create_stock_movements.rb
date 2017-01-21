@@ -10,6 +10,8 @@ class CreateStockMovements < ActiveRecord::Migration[5.0]
       t.datetime :actual_date_of_shipment
       t.integer :supplier_id
       t.boolean :is_entry
+      t.references :company, foreign_key: true
+
 
       t.timestamps
     end
