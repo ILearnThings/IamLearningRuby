@@ -1,0 +1,68 @@
+<%= form_for [@company, @stock_movement], :html => {:class => "form-horizontal"} do |f| %>
+<fieldset>
+    <% if @stock_movement.is_entry %>
+        <legend>Stok Girişi</legend>
+    <%else %>
+        <legend>Stok Çıkışı</legend>
+    <% end%>
+    <div class="form-group">
+        <%= f.label :description, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :description, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :address, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :address, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :town, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :town, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :city, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :city, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :date_of_issuance, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :date_of_issuance, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :waybill_number, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :waybill_number, :class => "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :actual_date_of_shipment, :class => "col-lg-2 control-label" %>
+        <div class="col-lg-10">
+            <%= f.text_field :actual_date_of_shipment, :class => "form-control" %>
+        </div>
+    </div>
+
+    <%= f.hidden_field :is_entry %>
+
+    <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2"> 
+            <%= link_to "VAZGEÇ", company_stock_movements_path(@company), :class => "btn btn-default" %>
+            <%= f.submit "KAYDET", :class => "btn btn-primary" %>
+        </div>
+    </div>
+</fieldset>
+<% end %>
+
+
