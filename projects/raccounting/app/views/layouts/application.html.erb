@@ -7,32 +7,26 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-      <%= stylesheet_link_tag 'bootstrap' %>
-      <%= stylesheet_link_tag 'custom.min' %>
-      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9]>
-        <%= javascript_include_tag 'html5shiv' %>
-        <%= javascript_include_tag 'respond.min' %>
-      <![endif]-->
-     
+		<%= stylesheet_link_tag 'bootstrap' %>
+		<%= stylesheet_link_tag 'custom.min' %>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<%= javascript_include_tag 'html5shiv' %>
+			<%= javascript_include_tag 'respond.min' %>
+		<![endif]-->
   </head>
-
 <body>
+<% if user_signed_in? %>
 	<div class="container navbar-fixed-top"> 
 		<div class="row">
 			<div class="col-lg-8 col-md-7 col-sm-6">
 				<h1>Raccounting</h1>
 			</div>
-		  <div class="col-lg-4 col-md-5 col-sm-6">			 
-			  <% if user_signed_in? %>
-			  <strong><%= current_user.name  %></strong>
-			  <strong><%= current_user.company.name %></strong>
-			  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-			  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			  <% else %>
-			  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-			  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-			  <% end %>			  
+		  <div class="col-lg-4 col-md-5 col-sm-6">
+					<strong><%= current_user.name  %></strong>
+					<strong><%= current_user.company.name %></strong>
+					<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+					<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 		  </div>
 		</div>
 		<div class="row">
@@ -74,5 +68,6 @@
 	</div>
   <%= javascript_include_tag 'jquery-1.10.2.min' %>
   <%= javascript_include_tag 'bootstrap.min' %>
-  </body>
+<% end %>
+</body>
 </html>
