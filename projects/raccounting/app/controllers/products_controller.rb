@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
     def new
         @product = Product.new
+        @product.do_stock_tracking = true
     end
 
     def edit
