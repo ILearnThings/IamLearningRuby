@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   before_action :validate_company_ownership #, :unless => :authenticate_user
   # skip_before_action :current_company
   #before_action :current_company #, :unless => :authenticate_user
+  layout :layout_by_resource
 
-  private
+ private
 
   def validate_company_ownership
     if user_signed_in?
@@ -23,5 +24,13 @@ class ApplicationController < ActionController::Base
     # if  current_user.company_id.to_s != params[:company_id].to_s
     #   redirect_to root_path #unauthorized access, because this product is owned by another company
     # end
+  end
+
+   def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
   end
 end
