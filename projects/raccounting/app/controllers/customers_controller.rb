@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-      @customers = Customer.all
+      @customers = Customer.where(company_id: params[:company_id])
   end
 
   def show
@@ -17,6 +17,7 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_param)
+    @customer.company = @company
 
     if @customer.save()
       redirect_to company_customer_path(@company, @customer)
