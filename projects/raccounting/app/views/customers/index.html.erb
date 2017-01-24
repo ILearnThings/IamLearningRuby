@@ -1,18 +1,18 @@
-<h1>Customer#index</h1>
-<div> <%= link_to 'New Customer', new_company_customer_path(@company) %> </div>
-<table>
-
-<tr>
-<th>Company Title</th>
-<th>Short Name</th>
-</tr>
-
-<% @customers.each do |customer| %>
-    <tr>
-<td><%= customer.company_title %></td>
-<td><%= customer.short_name %></td>
-<td><%= link_to 'Show', company_customer_path(@company, customer) %></td>
-<td><%= link_to 'Edit', edit_company_customer_path(@company, customer) %></td>
-</tr>
-<% end %>
+<h1>Müşteriler</h1>
+<div> <%= link_to 'YENİ MÜŞTERİ OLUŞTUR', new_company_customer_path(@company), :class => "btn btn-default" %> </div>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>ÜNVANI</th>
+			<th>KISA İSİM</th>
+		</tr>
+	</thead>
+<tbody>
+	<% @customers.each do |customer| %>
+		<tr>
+			<td><%= link_to customer.company_title, company_customer_path(@company, customer) %></td>
+			<td><%= customer.short_name %></td>
+		</tr>
+	<% end %>
+</tbody>
 </table>
