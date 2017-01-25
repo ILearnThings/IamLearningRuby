@@ -1,11 +1,25 @@
-<div>
-    <h1><%= @product.name%></h1>
-    <p>
-        <span>ALIŞ <%= @product.purchase_price %></span>
-        <span>SATIŞ <%= @product.sales_price %></span>
-        <span>KDV <%= @product.vat %></span>
-        <span>STOK <%= @product.amount %></span>
-    </p>
+<div class="row">
+	<div class="col-lg-12">
+		<h3>Hizmet / Ürün</h3>
+	</div>
+</div>
 
-    <%= link_to 'Düzenle', edit_company_product_path(@company, @product) %>
+<div class="row">
+<div class="row">
+<div class="col-lg-7">
+    <h4><%= @product.name%></h4>
+    </div>
+
+    <div class="col-lg-offset-5">
+    
+    <%= link_to 'Düzenle', edit_company_product_path(@company, @product), :class => "btn btn-default"  %> 
+		</div>
+		</div>
+<hr />
+
+<div class="row">
+       <div class="col-lg-3"> ALIŞ <%= @product.purchase_price %></div>
+        <div class="col-lg-3"> SATIŞ <%= @product.sales_price %></div>
+<div class="col-lg-3">KDV <%= @product.vat %></div>
+        <div class="col-lg-3"> STOK <%= @product.amount %></div>
 </div>
