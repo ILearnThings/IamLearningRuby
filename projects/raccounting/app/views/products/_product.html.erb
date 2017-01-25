@@ -1,8 +1,6 @@
 <tr>
-    <td><%= product.name %></td>
+    <td><%= link_to product.name, company_product_path(@company, product) %></td>
     <td><%= product.amount %></td>
     <td><%= product.purchase_price %></td>
     <td><%= product.sales_price %></td>
-    <td><%= link_to 'Show', company_product_path(@company, product) %></td>
-    <td><%= link_to 'Edit', edit_company_product_path(@company, product) %></td>
 </tr>
