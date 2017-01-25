@@ -22,9 +22,8 @@
 				<h1>Raccounting</h1>
 			</div>
 			<div class="col-lg-3 col-md-5 col-sm-6 col-lg-offset-1">					
-					<strong><%= current_user.name + " " + current_user.surname  %></strong>
-					<strong><%= current_user.company.name %></strong>
-					<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+					<strong><%= current_user.name + " " + current_user.surname  %></strong>,
+					<strong><%= current_user.company.name %></strong> |
 					<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>					
 			</div>
 		</div>
