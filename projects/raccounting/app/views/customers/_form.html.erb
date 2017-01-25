@@ -1,0 +1,101 @@
+<%if @customer.errors.any? %>
+	<div>
+		<%= pluralize(@customer.errors.count, "error") %> detected:
+		<ul>
+			<% @customer.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<%end%>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for [@company, @customer], :html => {:class => "form-horizontal"} do |f| %>
+	<fieldset>
+		<% if controller.action_name == "new" %>
+			<legend>Yeni Müşteri</legend>
+		<% elsif controller.action_name == "edit" %>
+			<legend>Müşteri Düzenle</legend>
+		<% end %>
+		
+		<div class="form-group">
+			<%= f.label :company_title , :class => "col-lg-2 control-label" %>
+			<div class="col-lg-10">
+				<%= f.text_field :company_title , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :short_name , :class => "col-lg-2 control-label"%>
+			<div class="col-lg-10">
+				<%= f.text_field :short_name , :class => "form-control" %>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<%= f.label :email, :class => "col-lg-2 control-label" %>
+			<div class="col-lg-10">
+				<%= f.text_field :email, :class => "form-control"  %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :phone_number, :class => "col-lg-2 control-label" %>
+			<div class="col-lg-10">  
+				<%= f.text_field :phone_number , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :fax_number, :class => "col-lg-2 control-label" %>
+			<div class="col-lg-10"> 
+				<%= f.text_field :fax_number, :class => "form-control"  %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :iban, :class => "col-lg-2 control-label" %>  
+			<div class="col-lg-10">
+				<%= f.text_field :iban , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :address , :class => "col-lg-2 control-label"%>  
+			<div class="col-lg-10">
+				<%= f.text_field :address , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :customer_type , :class => "col-lg-2 control-label"%>   
+			<div class="col-lg-10">
+				<%= f.label :customer_type_legal_entity, "Legal Entity" %>
+				<%= f.radio_button :customer_type, "legal_entity" %>
+
+				<%= f.label :customer_type_real_person, "Real Person" %>
+				<%= f.radio_button :customer_type, "real_person" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :nid , :class => "col-lg-2 control-label" %>  
+			<div class="col-lg-10">
+				<%= f.text_field :nid , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :tax_office , :class => "col-lg-2 control-label"%>  
+			<div class="col-lg-10">
+				<%= f.text_field :tax_office , :class => "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2"> 
+				<%= link_to "VAZGEÇ", company_customers_path(@company), :class => "btn btn-default" %>
+				<%= f.submit "KAYDET", :class => "btn btn-primary" %>
+			</div>
+		</div>
+	</fieldset>
+<% end %>
